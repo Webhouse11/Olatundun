@@ -32,11 +32,11 @@ export default function Navbar() {
     <>
       <nav className={`fixed w-full z-50 transition-all duration-300 ${isScrolled ? 'glass-nav py-3' : 'bg-transparent py-5'}`}>
         <div className="max-w-7xl mx-auto px-6 md:px-12 flex justify-between items-center">
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-3">
             {settings.logo_url ? (
-              <SafeImage src={settings.logo_url} alt="Logo" className="h-10 w-auto object-contain" />
+              <SafeImage src={settings.logo_url} alt="Olatundun Nursing Home Logo" className="h-16 w-auto object-contain" />
             ) : (
-              <div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center text-white font-bold text-xl">
+              <div className="w-16 h-16 bg-primary rounded-lg flex items-center justify-center text-white font-bold text-2xl">
                 {settings.logo_text}
               </div>
             )}

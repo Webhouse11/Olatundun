@@ -14,11 +14,11 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
           {/* Brand Column */}
           <div className="lg:col-span-1">
-            <div className="flex items-center gap-2 mb-6">
+            <div className="flex items-center gap-3 mb-6">
               {settings.logo_url ? (
-                <SafeImage src={settings.logo_url} alt="Logo" className="h-10 w-auto object-contain" />
+                <SafeImage src={settings.logo_url} alt="Olatundun Nursing Home Logo" className="h-16 w-auto object-contain" />
               ) : (
-                <div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center text-white font-bold text-xl">
+                <div className="w-16 h-16 bg-primary rounded-lg flex items-center justify-center text-white font-bold text-2xl">
                   {settings.logo_text}
                 </div>
               )}

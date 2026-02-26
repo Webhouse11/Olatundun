@@ -51,6 +51,9 @@ async function startServer() {
 
   app.use(express.json({ limit: '10mb' }));
 
+  // Serve static files from public directory (useful for images)
+  app.use(express.static(path.join(__dirname, "public")));
+
   // API Routes
   app.get("/api/settings", (req, res) => {
     const rows = db.prepare("SELECT * FROM settings").all();
@@ -88,9 +91,13 @@ async function startServer() {
     });
     app.use(vite.middlewares);
   } else {
-    app.use(express.static(path.join(__dirname, "dist")));
+    // In production, serve from dist
+    const distPath = path.join(__dirname, "dist");
+    app.use(express.static(distPath));
+    
+    // Fallback for SPA
     app.get("*", (req, res) => {
-      res.sendFile(path.join(__dirname, "dist", "index.html"));
+      res.sendFile(path.join(distPath, "index.html"));
     });
   }
 

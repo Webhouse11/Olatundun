@@ -1,0 +1,7 @@
+{
+  "name": "Olatundun Nursing Home & Geriatric Center",
+  "description": "Professional healthcare facility committed to compassionate care for the elderly, mothers, and families in Osogbo, Osun State.",
+  "requestFramePermissions": [
+    "geolocation"
+  ]
+}

@@ -44,7 +44,7 @@ export default function Hero() {
                 <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
               </a>
               <a 
-                href={`https://wa.me/${settings.contact_phone.replace(/\D/g, '')}`}
+                href={`https://wa.me/${settings.contact_phone.replace(/\D/g, '').replace(/^0/, '234')}`}
                 className="bg-white/10 hover:bg-white/20 text-white backdrop-blur-md border border-white/30 px-6 py-3 rounded-full font-medium transition-all duration-300 flex items-center justify-center gap-2"
               >
                 <MessageCircle size={20} />

@@ -31,7 +31,7 @@ const defaultSettings = {
   "ceo_name": "Adio Lateefat Oluwakemi",
   "ceo_role": "Founder & Lead Nurse",
   "ceo_image": "/images/ceo_image.jpg",
-  "contact_phone": "+234 800 000 0000",
+  "contact_phone": "08078175508",
   "contact_email": "olatundungeriatric25@gmail.com",
   "contact_address": "123 Healthcare Avenue, Osogbo, Osun State, Nigeria",
   "team_members": "[{\"name\":\"Adio Lateefat Oluwakemi\",\"role\":\"CEO & Founder\",\"expertise\":\"Geriatric & Maternity Specialist\",\"image\":\"/images/team_0.jpg\"},{\"name\":\"Dr. Samuel Okoro\",\"role\":\"Lead Geriatrician\",\"expertise\":\"Elderly Chronic Disease Management\",\"image\":\"/images/team_1.jpg\"},{\"name\":\"Nurse Blessing Adeyemi\",\"role\":\"Maternity Lead\",\"expertise\":\"Obstetric & Fertility Support\",\"image\":\"/images/team_2.jpg\"},{\"name\":\"Dr. Fatima Ibrahim\",\"role\":\"Reproductive Health Expert\",\"expertise\":\"Fertility & Family Planning\",\"image\":\"/images/team_3.jpg\"}]"
@@ -44,6 +44,9 @@ Object.entries(defaultSettings).forEach(([key, value]) => {
 
 // Force update the email if it's the old default
 db.prepare("UPDATE settings SET value = ? WHERE key = 'contact_email' AND value = 'info@olatundunhealth.com'").run("olatundungeriatric25@gmail.com");
+
+// Force update the phone number if it's the old default
+db.prepare("UPDATE settings SET value = ? WHERE key = 'contact_phone' AND value = '+234 800 000 0000'").run("08078175508");
 
 async function startServer() {
   const app = express();

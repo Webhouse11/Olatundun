@@ -34,7 +34,32 @@ const defaultSettings = {
   "contact_phone": "08078175508",
   "contact_email": "olatundungeriatric25@gmail.com",
   "contact_address": "123 Healthcare Avenue, Osogbo, Osun State, Nigeria",
-  "team_members": "[{\"name\":\"Adio Lateefat Oluwakemi\",\"role\":\"CEO & Founder\",\"expertise\":\"Geriatric & Maternity Specialist\",\"image\":\"/images/team_0.jpg\"},{\"name\":\"Dr. Samuel Okoro\",\"role\":\"Lead Geriatrician\",\"expertise\":\"Elderly Chronic Disease Management\",\"image\":\"/images/team_1.jpg\"},{\"name\":\"Nurse Blessing Adeyemi\",\"role\":\"Maternity Lead\",\"expertise\":\"Obstetric & Fertility Support\",\"image\":\"/images/team_2.jpg\"},{\"name\":\"Dr. Fatima Ibrahim\",\"role\":\"Reproductive Health Expert\",\"expertise\":\"Fertility & Family Planning\",\"image\":\"/images/team_3.jpg\"}]"
+  "team_members": JSON.stringify([
+    {
+      name: "Adio Lateefat Oluwakemi",
+      role: "CEO & Founder",
+      expertise: "Geriatric & Maternity Specialist",
+      image: "https://res.cloudinary.com/dhzouslh1/image/upload/c_scale,w_300,f_auto,q_auto/v1772182747/1000097622_ucji4x.png"
+    },
+    {
+      name: "Dr. Samuel Okoro",
+      role: "Lead Geriatrician",
+      expertise: "Elderly Chronic Disease Management",
+      image: "/images/team_1.jpg"
+    },
+    {
+      name: "Nurse Blessing Adeyemi",
+      role: "Maternity Lead",
+      expertise: "Obstetric & Fertility Support",
+      image: "/images/team_2.jpg"
+    },
+    {
+      name: "Dr. Fatima Ibrahim",
+      role: "Reproductive Health Expert",
+      expertise: "Fertility & Family Planning",
+      image: "/images/team_3.jpg"
+    }
+  ])
 };
 
 const insert = db.prepare("INSERT OR IGNORE INTO settings (key, value) VALUES (?, ?)");
@@ -56,6 +81,9 @@ db.prepare("UPDATE settings SET value = ? WHERE key = 'hero_image'").run("https:
 
 // Force update the CEO image URL to the new Cloudinary link
 db.prepare("UPDATE settings SET value = ? WHERE key = 'ceo_image'").run("https://res.cloudinary.com/dhzouslh1/image/upload/c_scale,w_300,f_auto,q_auto/v1772182747/1000097622_ucji4x.png");
+
+// Force update team_members to use the new CEO image
+db.prepare("UPDATE settings SET value = ? WHERE key = 'team_members' AND value LIKE '%/images/team_0.jpg%'").run(defaultSettings.team_members);
 
 async function startServer() {
   const app = express();

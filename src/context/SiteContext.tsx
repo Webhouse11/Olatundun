@@ -44,7 +44,32 @@ const DEFAULT_SETTINGS: SiteSettings = {
   "contact_phone": "08078175508",
   "contact_email": "olatundungeriatric25@gmail.com",
   "contact_address": "123 Healthcare Avenue, Osogbo, Osun State, Nigeria",
-  "team_members": "[{\"name\":\"Adio Lateefat Oluwakemi\",\"role\":\"CEO & Founder\",\"expertise\":\"Geriatric & Maternity Specialist\",\"image\":\"/images/team_0.jpg\"},{\"name\":\"Dr. Samuel Okoro\",\"role\":\"Lead Geriatrician\",\"expertise\":\"Elderly Chronic Disease Management\",\"image\":\"/images/team_1.jpg\"},{\"name\":\"Nurse Blessing Adeyemi\",\"role\":\"Maternity Lead\",\"expertise\":\"Obstetric & Fertility Support\",\"image\":\"/images/team_2.jpg\"},{\"name\":\"Dr. Fatima Ibrahim\",\"role\":\"Reproductive Health Expert\",\"expertise\":\"Fertility & Family Planning\",\"image\":\"/images/team_3.jpg\"}]"
+  "team_members": JSON.stringify([
+    {
+      name: "Adio Lateefat Oluwakemi",
+      role: "CEO & Founder",
+      expertise: "Geriatric & Maternity Specialist",
+      image: "https://res.cloudinary.com/dhzouslh1/image/upload/c_scale,w_300,f_auto,q_auto/v1772182747/1000097622_ucji4x.png"
+    },
+    {
+      name: "Dr. Samuel Okoro",
+      role: "Lead Geriatrician",
+      expertise: "Elderly Chronic Disease Management",
+      image: "/images/team_1.jpg"
+    },
+    {
+      name: "Nurse Blessing Adeyemi",
+      role: "Maternity Lead",
+      expertise: "Obstetric & Fertility Support",
+      image: "/images/team_2.jpg"
+    },
+    {
+      name: "Dr. Fatima Ibrahim",
+      role: "Reproductive Health Expert",
+      expertise: "Fertility & Family Planning",
+      image: "/images/team_3.jpg"
+    }
+  ])
 };
 
 export function SiteProvider({ children }: { children: React.ReactNode }) {

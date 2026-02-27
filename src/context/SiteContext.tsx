@@ -31,7 +31,7 @@ const SiteContext = createContext<SiteContextType | undefined>(undefined);
 const DEFAULT_SETTINGS: SiteSettings = {
   "site_name": "Olatundun Nursing Home and Geriatric Center",
   "logo_text": "O",
-  "logo_url": "/images/logo_url.jpg",
+  "logo_url": "https://res.cloudinary.com/dhzouslh1/image/upload/v1772182746/1000097630_hultaz.jpg",
   "hero_title": "Compassionate Care for Every Stage of Life",
   "hero_subtitle": "Holistic healthcare for the elderly, mothers, and families — at our facility or in the comfort of your home.",
   "hero_image": "/images/hero_image.jpg",

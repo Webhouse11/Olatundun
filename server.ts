@@ -21,7 +21,7 @@ db.exec(`
 const defaultSettings = {
   "site_name": "Olatundun Nursing Home and Geriatric Center",
   "logo_text": "O",
-  "logo_url": "/images/logo_url.jpg",
+  "logo_url": "/images/logo.svg",
   "hero_title": "Compassionate Care for Every Stage of Life",
   "hero_subtitle": "Holistic healthcare for the elderly, mothers, and families — at our facility or in the comfort of your home.",
   "hero_image": "/images/hero_image.jpg",
@@ -47,6 +47,9 @@ db.prepare("UPDATE settings SET value = ? WHERE key = 'contact_email' AND value 
 
 // Force update the phone number if it's the old default
 db.prepare("UPDATE settings SET value = ? WHERE key = 'contact_phone' AND value = '+234 800 000 0000'").run("08078175508");
+
+// Force update the logo URL to the new SVG
+db.prepare("UPDATE settings SET value = ? WHERE key = 'logo_url'").run("/images/logo.svg");
 
 async function startServer() {
   const app = express();

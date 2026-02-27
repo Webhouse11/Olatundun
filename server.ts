@@ -27,7 +27,7 @@ const defaultSettings = {
   "hero_image": "https://res.cloudinary.com/dhzouslh1/image/upload/c_fill,w_auto,f_auto,q_auto/v1772182745/1000097638_rczupj.jpg",
   "about_title": "A Professional Healthcare Facility Committed to Compassionate Care",
   "about_description": "Olatundun Nursing Home and Geriatric Center LTD is a professional healthcare facility committed to compassionate care for the elderly, mothers, and families.",
-  "about_image": "/images/about_image.png",
+  "about_image": "https://res.cloudinary.com/dhzouslh1/image/upload/v1772186231/1000103171_qpr2eu.jpg",
   "ceo_name": "Adio Lateefat Oluwakemi",
   "ceo_role": "Founder & Lead Nurse",
   "ceo_image": "https://res.cloudinary.com/dhzouslh1/image/upload/c_scale,w_300,f_auto,q_auto/v1772182747/1000097622_ucji4x.png",
@@ -84,6 +84,9 @@ db.prepare("UPDATE settings SET value = ? WHERE key = 'ceo_image'").run("https:/
 
 // Force update team_members to use the new CEO image
 db.prepare("UPDATE settings SET value = ? WHERE key = 'team_members' AND value LIKE '%/images/team_0.jpg%'").run(defaultSettings.team_members);
+
+// Force update about_image to the new Cloudinary link
+db.prepare("UPDATE settings SET value = ? WHERE key = 'about_image'").run("https://res.cloudinary.com/dhzouslh1/image/upload/v1772186231/1000103171_qpr2eu.jpg");
 
 async function startServer() {
   const app = express();

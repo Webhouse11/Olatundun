@@ -27,7 +27,7 @@ export default function About() {
           >
             <div className="relative z-10 rounded-3xl overflow-hidden shadow-2xl">
               <SafeImage
-                src={settings.about_image}
+                src={settings.about_image || "https://res.cloudinary.com/dhzouslh1/image/upload/v1772186231/1000103171_qpr2eu.jpg"}
                 alt="Healthcare Facility"
                 className="w-full h-auto"
               />
